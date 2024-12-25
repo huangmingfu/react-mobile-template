@@ -8,7 +8,7 @@ import tseslint from 'typescript-eslint';
 export default tseslint.config(
   { ignores: ['dist', 'dist*', 'node_modules'] },
   {
-    settings: { react: { version: '19.0' } },
+    settings: { react: { version: '18.3' } },
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {

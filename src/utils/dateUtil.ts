@@ -27,22 +27,3 @@ export function formatToDateTime(date?: dayjs.ConfigType, format = DATE_TIME_FOR
 export function formatToDate(date?: dayjs.ConfigType, format = DATE_FORMAT): string {
   return dayjs(date).format(format);
 }
-
-/**
- * 判断指定时间是否在某个时间之前。
- * @param {string | dayjs.ConfigType} [specifiedTime] 要比较的指定时间，默认为当前时间。格式为 'YYYY-MM-DD HH:mm:ss' 或 dayjs 对象。
- * @param {string} targetTime 要比较的目标时间，格式为 'YYYY-MM-DD HH:mm:ss'。
- * @returns {boolean} 如果指定时间在目标时间之前，则返回 true，否则返回 false。
- */
-export function isTimeBefore(
-  specifiedTime: dayjs.ConfigType = dayjs(),
-  targetTime: string,
-): boolean {
-  // 将指定时间转换为 dayjs 对象
-  const specified = dayjs(specifiedTime);
-
-  // 将目标时间转换为 dayjs 对象
-  const target = dayjs(targetTime);
-
-  return specified.isBefore(target);
-}

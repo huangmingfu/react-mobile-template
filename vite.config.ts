@@ -49,7 +49,10 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             // exclude: /node_modules\/(?!antd-mobile)/ // 如果rootValue设置成了75，需要增加排除 antd-mobile 库的转换
           }),
           autoprefixer(), // 自动添加浏览器前缀
-          /** 喜欢使用vw的，可以改成vw插件"postcss-px-to-viewport" */
+          /**
+           * 喜欢使用vw的，可以改成vw插件"postcss-px-to-viewport"
+           * @see https://github.com/evrone/postcss-px-to-viewport
+           */
           // postcsspxtoviewport({
           //   unitToConvert: 'px', // 要转化的单位
           //   viewportWidth: 375, // UI设计稿的宽度, 375视口的宽度，对应的时设计稿的宽度/2，一般为750

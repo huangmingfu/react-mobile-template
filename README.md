@@ -19,7 +19,7 @@ GitHub 项目地址：[React-Mobile-Template](https://github.com/huangmingfu/rea
 
 ### 🛠 技术栈选型
 
-- **React 19 & React-DOM**：使用最新版 React 实现前端高性能和更流畅的用户体验。
+- **React 18 & React-DOM**：使用最新版 React 实现前端高性能和更流畅的用户体验。
 - **React-Router**：最新v7版本，支持路由懒加载，优化页面切换性能。
 - **rem**：使用 rem 单位进行移动端适配，确保在不同设备上有一致的显示效果（本项目也配置了vw参考可供开发者自行选择使用）。
 - **antd-mobile**：阿里巴巴开源的移动端组件库，提供丰富的 UI 组件，简化开发流程。
@@ -71,20 +71,15 @@ GitHub 项目地址：[React-Mobile-Template](https://github.com/huangmingfu/rea
 
 ## 总结
 
-**React-Mobile-Template** 项目模板的目标是通过预设的最佳实践配置，减少开发者在项目初始化时的琐碎配置步骤，让你可以更快上手项目开发。同时，配备了成熟的开发工具链和强大的插件支持，以确保团队开发的一致性和代码的高质量。如果你正在寻找一款高效的 React 项目模板，不妨试试 **React-Mobile-Template**！
+**React-Mobile-Template** 项目模板的目标是通过预设的最佳实践配置，减少开发者在项目初始化时的琐碎配置步骤，让你可以更快上手项目开发。同时，配备了成熟的开发工具链和强大的插件支持，以确保团队开发的一致性和代码的高质量。如果你正在寻找一款高效的 `React 移动端项目模板`，不妨试试 **React-Mobile-Template**！
 
-**👉 赶快 Star 项目，开启你的 React 项目之旅！**
+**👉 赶快 Star 项目，开启你的 React 移动端项目之旅！**
 
 > [React-Mobile-Template](https://github.com/huangmingfu/react-mobile-template)
 
 ## 注意
 
-> 1.目前有一些ui库还未支持React19，本项目使用的是18.3.1版本，谨慎升级react版本。  
-> 2.postcss-pxtorem插件不支持内联样式，所以 `utils` 里面配备了 `px2rem` 函数。示例：
-
-```ts
-<div style={{ width: px2rem(100) }}>test</div>
-```
-
-> 3. 以下场景pxtorem插件不会转换rem：  
->    (1) 在main.ts里引入样式，如 `import '@/styles/scss/global.scss';`，建议引入不涉及px的样式，如reset.css。
+1.目前有一些ui库还未支持React19，本项目使用的是18.3.1版本，谨慎升级react版本。  
+2.postcss-pxtorem插件不支持内联样式，所以 `utils` 里面配备了 `px2rem` 函数解决。示例：`<div style={{ width: px2rem(100) }}>test</div>`  
+3. 以下场景pxtorem插件不会转换rem：  
+(1).在main.ts里引入样式，如 `import '@/styles/scss/global.scss';`，建议引入不涉及px的样式，如reset.css。

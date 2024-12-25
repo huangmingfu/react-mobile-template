@@ -4,6 +4,4 @@ declare interface IResponse<T = unknown> {
   data: T;
 }
 
-declare type Fn = () => void;
-
 declare module 'postcss-pxtorem';

@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 
+type Fn = () => void;
+
 interface State {
   count: number;
   isLoading: boolean;

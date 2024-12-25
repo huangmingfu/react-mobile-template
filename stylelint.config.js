@@ -13,14 +13,6 @@ export default {
     'no-empty-source': null, // 关闭禁止空源码
     'selector-class-pattern': null, // 关闭强制选择器类名的格式
     'property-no-unknown': null, // 禁止未知的属性(true 为不允许)
-    'value-no-vendor-prefix': null, // 关闭 属性值前缀 --webkit-box
-    'property-no-vendor-prefix': null, // 关闭 属性前缀 -webkit-mask
-    'selector-pseudo-class-no-unknown': [
-      true,
-      {
-        ignorePseudoClasses: ['global', 'export'],
-      },
-    ],
   },
   ignoreFiles: [
     '**/*.js',

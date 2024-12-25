@@ -24,9 +24,9 @@
     /** 别名路径提示 */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["**/*.ts", "src/**/*.d.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", "dist-*"]
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "dist*"]
 }
