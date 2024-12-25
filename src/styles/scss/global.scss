@@ -1,0 +1,33 @@
+/** v-show */
+.hide {
+  display: none !important;
+}
+
+/* HTML: <div class="route-loading"></div> */
+.route-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 22px;
+  color: #514b82;
+  border: 2px solid;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.route-loading::before {
+  position: absolute;
+  inset: 0 100% 0 0;
+  margin: 2px;
+  content: '';
+  background: currentcolor;
+  border-radius: inherit;
+  animation: l6 2s infinite;
+
+  @keyframes l6 {
+    100% {
+      inset: 0;
+    }
+  }
+}

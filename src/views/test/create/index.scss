@@ -1,0 +1,23 @@
+.pg-guild-create {
+  box-sizing: border-box;
+  width: 155px;
+  font-size: 17px;
+
+  &__count {
+    font-weight: bold;
+    color: $color-test;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  &__username {
+    font-size: 18px;
+
+    // 使用全局样式工具函数：文字描边
+    @include text-stroke(skyblue);
+  }
+}
