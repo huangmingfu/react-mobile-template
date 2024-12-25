@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
-    "mikestead.dotenv"
+    "mikestead.dotenv",
+    "dsznajder.es7-react-js-snippets"
   ]
 }
