@@ -48,12 +48,10 @@ GitHub 项目地址：[React-Mobile-Template](https://github.com/huangmingfu/rea
 
 ### 💡 高效的代码规范管理
 
-除了代码结构的规范化，项目还集成了多种代码质量检查工具，确保开发体验与代码质量：
+除了代码结构的规范化，项目还集成了极简代码质量检查工具，确保开发体验与代码质量：
 
-- **ESLint**：代码风格和错误检查，已升级到最新版，弃用 `.eslintignore`，改用 `ignores` 配置项。
-- **Prettier**：统一代码格式，避免团队协作中因格式问题产生的冲突。
-- **Stylelint**：针对样式的 Lint 工具，确保 SCSS 代码的一致性。
-- **Commitlint** + **Husky** + **Lint-Staged**：配合 Git Hooks 实现代码提交规范化，避免低质量代码入库。
+- **@antfu/eslint-config**：预配置了 ESLint 规则，涵盖了最佳实践和常见错误检测，帮助开发者编写高质量的代码。
+- **simple-git-hooks**：通过 Git Hooks 自动执行代码检查和格式化，确保每次提交和推送的代码都符合项目规范，减少代码审查的工作量并提高代码一致性。
 - **EditorConfig**：编辑器的统一配置，减少因编辑器差异产生的问题。
 
 ## 其他

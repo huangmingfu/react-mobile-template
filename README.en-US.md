@@ -43,10 +43,8 @@ To ensure code consistency and standardization during team collaboration, the pr
 
 ### 💡 Efficient Code Standard Management
 
-- **ESLint**: Code style and error checking
-- **Prettier**: Unified code formatting
-- **Stylelint**: Style linting tool
-- **Commitlint + Husky + Lint-Staged**: Git Hooks for code commit standardization
+- **@antfu/eslint-config**: Pre-configured ESLint rules that cover best practices and common error detection, helping developers write high-quality TypeScript and JavaScript code.
+- **simple-git-hooks**: Automatically runs code checks and formatting via Git Hooks, ensuring that every commit and push conforms to project standards, reducing code review workload, and improving code consistency.
 - **EditorConfig**: Unified editor configuration
 
 ## Summary
