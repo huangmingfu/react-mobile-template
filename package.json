@@ -83,7 +83,8 @@
     "vite-plugin-checker": "^0.8.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged && npx --no -- commitlint --edit"
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npx --no -- commitlint --edit"
   },
   "lint-staged": {
     "*": "eslint --fix"
