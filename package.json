@@ -42,8 +42,7 @@
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx simple-git-hooks",
     "clean": "rm -rf node_modules dist dist-*",
-    "deps:check": "pnpm outdated -r",
-    "deps:update": "pnpm update --latest"
+    "deps:check": "pnpm outdated -r"
   },
   "dependencies": {
     "ahooks": "^3.8.4",
@@ -60,8 +59,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.1",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
     "@eslint-react/eslint-plugin": "^1.22.1",
     "@react-dev-inspector/vite-plugin": "^2.0.1",
     "@types/node": "^22.10.2",
@@ -83,9 +80,7 @@
     "vite-plugin-checker": "^0.8.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "npx --no -- commitlint --edit $1",
-    "preserveUnused": ["commit-msg"]
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
