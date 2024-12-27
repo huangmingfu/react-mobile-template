@@ -84,7 +84,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "pre-push": "pnpm commitlint --edit"
+    "pre-push": "npx commitlint --edit $1"
   },
   "lint-staged": {
     "*": "eslint --fix"
