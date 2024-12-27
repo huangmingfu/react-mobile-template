@@ -1,9 +1,9 @@
-import { lazy } from 'react';
-import { Outlet } from 'react-router';
+import type { RouteObject } from '@/types/router'
+import { lazy } from 'react'
 
-import { RouteObject } from '@/types/router';
+import { Outlet } from 'react-router'
 
-import { LazyLoad } from '../utils/lazy-load';
+import { LazyLoad } from '../utils/lazy-load'
 
 export default [
   {
@@ -31,4 +31,4 @@ export default [
       },
     ],
   },
-] as RouteObject[];
+] as RouteObject[]

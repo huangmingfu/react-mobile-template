@@ -1,5 +1,5 @@
-import { GET } from '@/services';
+import { GET } from '@/services'
 
 export function getXXX(params: { test: string }) {
-  return GET<{ list: any[] }>('/test', params);
+  return GET<{ list: any[] }>('/test', params)
 }

@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useUserStore } from '@/store'
 
-import { useUserStore } from '@/store';
+import { useState } from 'react'
 
-import './index.scss';
+import './index.scss'
 
 function Create() {
-  const [count, _setCount] = useState(99);
+  const [count, _setCount] = useState(99)
 
-  const { userInfo, updateUserName } = useUserStore();
+  const { userInfo, updateUserName } = useUserStore()
 
   return (
     <>
@@ -17,15 +17,15 @@ function Create() {
         <hr />
         <span className="pg-guild-create__username">{userInfo.username}</span>
         <img className="pg-guild-create__avatar" src={userInfo.avatar} alt="" />
-        <button onClick={() => updateUserName('vue3')}>updateUserName</button>
+        <button type="button" onClick={() => updateUserName('vue3')}>updateUserName</button>
       </div>
     </>
-  );
+  )
 }
 
-export default Create;
+export default Create
 
-/** 
+/**
 // **** import 自动排序测试 ****
 // 复制以下，替换全部上面的import
 

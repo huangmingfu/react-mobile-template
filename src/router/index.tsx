@@ -1,13 +1,14 @@
-import { lazy } from 'react';
-import { Navigate, RouteObject, createBrowserRouter } from 'react-router';
+import type { RouteObject } from 'react-router'
+import { lazy } from 'react'
+import { createBrowserRouter, Navigate } from 'react-router'
 
-import ErrorBoundary from '../error-boundary';
-import { LazyLoad, loader, routes } from './utils';
+import ErrorBoundary from '../error-boundary'
+import { LazyLoad, loader, routes } from './utils'
 
 const router: RouteObject[] = [
   {
     path: '/',
-    loader: loader,
+    loader,
     /**
      * 可以在Root组件（自己新建），用 useLoaderData 接收 loader 返回的数据做一些操作
      * @see https://reactrouter.com/en/main/hooks/use-loader-data#useloaderdata
@@ -38,6 +39,8 @@ const router: RouteObject[] = [
     path: '*',
     element: <Navigate to="/404" />, // 找不到页面
   },
-];
+]
 
-export default createBrowserRouter(router);
+const AppRouter = createBrowserRouter(router)
+
+export default AppRouter

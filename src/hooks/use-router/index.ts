@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { useNavigate } from 'react-router';
+import { useMemo } from 'react'
+import { useNavigate } from 'react-router'
 
 export function useRouter() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const router = useMemo(
     () => ({
@@ -14,7 +14,7 @@ export function useRouter() {
       replace: (href: string) => navigate(href, { replace: true }),
     }),
     [navigate],
-  );
+  )
 
-  return router;
+  return router
 }

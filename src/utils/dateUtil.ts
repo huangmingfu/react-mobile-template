@@ -1,12 +1,12 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
-const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
-const DATE_FORMAT = 'YYYY-MM-DD';
+const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss'
+const DATE_FORMAT = 'YYYY-MM-DD'
 
 /**
  * 日期时间格式化工具。
  */
-export const dateUtil = dayjs;
+export const dateUtil = dayjs
 
 /**
  * 将日期时间格式化为指定格式的字符串。
@@ -15,7 +15,7 @@ export const dateUtil = dayjs;
  * @returns 格式化后的日期时间字符串。
  */
 export function formatToDateTime(date?: dayjs.ConfigType, format = DATE_TIME_FORMAT): string {
-  return dayjs(date).format(format);
+  return dayjs(date).format(format)
 }
 
 /**
@@ -25,5 +25,5 @@ export function formatToDateTime(date?: dayjs.ConfigType, format = DATE_TIME_FOR
  * @returns 格式化后的日期字符串。
  */
 export function formatToDate(date?: dayjs.ConfigType, format = DATE_FORMAT): string {
-  return dayjs(date).format(format);
+  return dayjs(date).format(format)
 }

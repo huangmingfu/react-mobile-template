@@ -1,2 +1,2 @@
-export * from './tools';
-export * from './dateUtil';
+export * from './dateUtil'
+export * from './tools'

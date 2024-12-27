@@ -1,20 +1,20 @@
-import { RouterProvider } from 'react-router/dom';
+import { Loading } from '@/components'
 
-import { useLoadingStore } from '@/store';
+import { useLoadingStore } from '@/store'
 
-import { Loading } from '@/components';
+import { RouterProvider } from 'react-router/dom'
 
-import router from './router';
+import router from './router'
 
 function App() {
-  const { isLoading } = useLoadingStore();
+  const { isLoading } = useLoadingStore()
   return (
     <>
       <RouterProvider router={router} />
       {isLoading && <Loading />}
       {/* ...其他需要全局管理的，如Modal弹窗等 */}
     </>
-  );
+  )
 }
 
-export default App;
+export default App

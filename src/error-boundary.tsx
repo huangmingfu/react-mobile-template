@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import { useRouteError } from 'react-router';
+import type { FC } from 'react'
+import { useRouteError } from 'react-router'
 
 const ErrorBoundary: FC = () => {
-  const routeError = useRouteError() as any;
-  console.error(routeError);
+  const routeError = useRouteError() as any
+  console.error(routeError)
   // 可以在这里根据不同的业务逻辑处理错误或者上报给日志服务
   return (
     <div
@@ -17,7 +17,8 @@ const ErrorBoundary: FC = () => {
       }}
     >
       <h1 style={{ color: '#ff6347', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
-        {routeError?.name || 'Error'}:
+        {routeError?.name || 'Error'}
+        :
       </h1>
       <p style={{ fontWeight: 'bold' }}>{routeError?.message || routeError?.error?.message}</p>
       <div
@@ -34,6 +35,7 @@ const ErrorBoundary: FC = () => {
         </pre>
       </div>
       <button
+        type="button"
         style={{
           padding: '10px 20px',
           fontSize: '16px',
@@ -48,6 +50,7 @@ const ErrorBoundary: FC = () => {
         重试
       </button>
       <button
+        type="button"
         style={{
           padding: '10px 20px',
           fontSize: '16px',
@@ -63,6 +66,7 @@ const ErrorBoundary: FC = () => {
         返回
       </button>
       <button
+        type="button"
         style={{
           padding: '10px 20px',
           fontSize: '16px',
@@ -78,7 +82,7 @@ const ErrorBoundary: FC = () => {
         回到首页
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default ErrorBoundary;
+export default ErrorBoundary

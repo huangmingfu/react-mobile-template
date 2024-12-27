@@ -1,21 +1,21 @@
-import { useEffect } from 'react';
+import { useRouter } from '@/hooks'
 
-import { useRouter } from '@/hooks';
+import { useEffect } from 'react'
 
 function NotFount() {
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/');
-    }, 1000);
-  }, [router]);
+      router.push('/')
+    }, 1000)
+  }, [router])
 
   return (
     <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
       404------（1s后将跳转到首页）
     </div>
-  );
+  )
 }
 
-export default NotFount;
+export default NotFount

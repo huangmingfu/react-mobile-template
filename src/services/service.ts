@@ -1,13 +1,14 @@
-import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import type { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
+import { Loading } from '@/components'
 
-import { Loading } from '@/components';
+import axios from 'axios'
 
 // 创建axios实例
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL, // 请求的默认前缀 只要是发出去请求就会 默认带上这个前缀
   timeout: 10000, // 请求超时时间：10s
   headers: { 'Content-Type': 'application/json' }, // 设置默认请求头
-});
+})
 
 // 请求拦截器
 axiosInstance.interceptors.request.use(
@@ -17,14 +18,14 @@ axiosInstance.interceptors.request.use(
     // if (token) {
     //     config.headers.Authorization = `Bearer ${token}`
     // }
-    Loading.show(); // 请求前显示loading
-    return config;
+    Loading.show() // 请求前显示loading
+    return config
   },
   (err: AxiosError) => {
-    Loading.hide(); // 请求结束隐藏loading
-    return Promise.reject(err);
+    Loading.hide() // 请求结束隐藏loading
+    return Promise.reject(err)
   },
-);
+)
 
 // 响应拦截器即异常处理
 axiosInstance.interceptors.response.use(
@@ -39,16 +40,16 @@ axiosInstance.interceptors.response.use(
     //   default:
     //     return res.data || {};
     // }
-    Loading.hide(); // 请求结束隐藏loading
-    return res; // res.data
+    Loading.hide() // 请求结束隐藏loading
+    return res // res.data
   },
   (err: AxiosError) => {
     // 如果接口请求报错时，也可以直接返回对象，如return { message: onErrorReason(error.message) }，这样使用async/await就不需要加try/catch
     // onErrorReason(err.message) // 做一些全局的错误提示，可用ui库的message提示组件
-    Loading.hide(); // 请求结束隐藏loading
-    return Promise.resolve(err);
+    Loading.hide() // 请求结束隐藏loading
+    return Promise.resolve(err)
   },
-);
+)
 
 /** 解析http层面请求异常原因 */
 // function onErrorReason(message: string): string {
@@ -62,4 +63,4 @@ axiosInstance.interceptors.response.use(
 // }
 
 // 导出实例
-export default axiosInstance;
+export default axiosInstance

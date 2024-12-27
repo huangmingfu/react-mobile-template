@@ -1,15 +1,16 @@
-import { inspectorServer } from '@react-dev-inspector/vite-plugin';
-import react from '@vitejs/plugin-react-swc';
-import autoprefixer from 'autoprefixer';
-import { resolve } from 'node:path';
-import process from 'node:process';
-import postCssPxToRem from 'postcss-pxtorem';
-import { ConfigEnv, UserConfig, defineConfig, loadEnv } from 'vite';
-import checker from 'vite-plugin-checker';
+import type { ConfigEnv, UserConfig } from 'vite'
+import { resolve } from 'node:path'
+import process from 'node:process'
+import { inspectorServer } from '@react-dev-inspector/vite-plugin'
+import react from '@vitejs/plugin-react-swc'
+import postcssPresetEnv from 'postcss-preset-env'
+import postCssPxToRem from 'postcss-pxtorem'
+import { defineConfig, loadEnv } from 'vite'
+import checker from 'vite-plugin-checker'
 
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   // 获取`.env`环境配置文件
-  const env = loadEnv(mode, process.cwd());
+  const env = loadEnv(mode, process.cwd())
   return {
     base: env.VITE_NODE_ENV === 'development' ? './' : undefined, // 目前仅为github pages作的配置，可根据情况自行修改或删除
     plugins: [
@@ -48,7 +49,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             selectorBlackList: ['norem'], // 过滤掉norem-开头的class，不进行rem转换
             // exclude: /node_modules\/(?!antd-mobile)/ // 如果rootValue设置成了75，需要增加排除 antd-mobile 库的转换
           }),
-          autoprefixer(), // 自动添加浏览器前缀
+          postcssPresetEnv(), // postcss预设环境
           /**
            * 喜欢使用vw的，可以改成vw插件"postcss-px-to-viewport"
            * @see https://github.com/evrone/postcss-px-to-viewport
@@ -71,12 +72,12 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     server: {
       open: true, // 运行时自动打开浏览器
       host: '0.0.0.0', // 局域网别人也可访问
-      port: Number(env.VITE_APP_PORT), //端口号
+      port: Number(env.VITE_APP_PORT), // 端口号
       proxy: {
         [env.VITE_API_BASE_URL]: {
           target: env.VITE_SERVER_URL,
           changeOrigin: true,
-          rewrite: (path: string) => path.replace(new RegExp('^' + env.VITE_API_BASE_URL), ''),
+          rewrite: (path: string) => path.replace(new RegExp(`^${env.VITE_API_BASE_URL}`), ''),
         },
       },
     },
@@ -118,5 +119,5 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         },
       },
     },
-  };
-});
+  }
+})

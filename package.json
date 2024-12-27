@@ -1,9 +1,9 @@
 {
   "name": "react-mobile-template",
-  "description": "一套基于react18、ts、vite6的移动端项目模板",
-  "version": "1.0.0",
   "type": "module",
+  "version": "1.0.0",
   "packageManager": "pnpm@9.15.1",
+  "description": "一套基于react18、ts、vite6的移动端项目模板",
   "author": "huangmingfu <212149997@qq.com>",
   "license": "MIT",
   "homepage": "https://github.com/huangmingfu/react-mobile-template",
@@ -21,6 +21,10 @@
     "antd-mobile",
     "vite"
   ],
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0",
+    "pnpm": ">=9"
+  },
   "scripts": {
     "dev": "vite -m dev",
     "dev:test": "vite -m test",
@@ -31,13 +35,12 @@
     "preview:dev": "pnpm vite preview -m dev",
     "preview:test": "pnpm vite preview -m test",
     "preview:pro": "pnpm vite preview -m pro",
-    "ts:check": "tsc --noEmit",
-    "lint:eslint": "eslint --max-warnings 0  \"**/*.{ts,tsx,js,jsx,cjs,mjs}\" --fix --cache",
-    "lint:format": "prettier --write --cache \"**/*.{ts,tsx,js,jsx,cjs,mjs,html,scss,css,less,json}\"",
-    "lint:style": "stylelint \"**/*.{css,scss,less}\" --fix --cache",
-    "lint:all": "pnpm run lint:eslint && pnpm run lint:style && pnpm run lint:format",
-    "prepare": "husky install",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:inspector": "npx @eslint/config-inspector",
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "npx simple-git-hooks",
     "clean": "rm -rf node_modules dist dist-*",
     "deps:check": "pnpm outdated -r",
     "deps:update": "pnpm update --latest"
@@ -56,41 +59,34 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.12.1",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
-    "@commitlint/prompt-cli": "^19.6.1",
-    "@eslint/js": "^9.17.0",
+    "@eslint-react/eslint-plugin": "^1.22.1",
     "@react-dev-inspector/vite-plugin": "^2.0.1",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "amfe-flexible": "^2.2.1",
-    "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-format": "^0.1.3",
     "globals": "^15.14.0",
-    "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
+    "postcss-preset-env": "^10.1.2",
     "postcss-pxtorem": "^6.1.0",
-    "prettier": "^3.4.2",
     "react-dev-inspector": "^2.0.1",
     "sass": "^1.83.0",
-    "stylelint": "^16.12.0",
-    "stylelint-config-recess-order": "^5.1.1",
-    "stylelint-config-standard": "^36.0.1",
-    "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-order": "^6.0.4",
+    "simple-git-hooks": "^2.11.1",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5",
     "vite-plugin-checker": "^0.8.0"
   },
-  "engines": {
-    "node": "^18.0.0 || ^20.0.0 || >=22.0.0",
-    "pnpm": ">=9"
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }

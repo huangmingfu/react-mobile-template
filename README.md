@@ -79,7 +79,7 @@ GitHub 项目地址：[React-Mobile-Template](https://github.com/huangmingfu/rea
 
 ## 注意
 
-1.目前有一些ui库还未支持React19，本项目使用的是18.3.1版本，谨慎升级react版本。  
-2.postcss-pxtorem插件不支持内联样式，所以 `utils` 里面配备了 `px2rem` 函数解决。示例：`<div style={{ width: px2rem(100) }}>test</div>`  
-3. 以下场景pxtorem插件不会转换rem：  
-(1).在main.ts里引入样式，如 `import '@/styles/scss/global.scss';`，建议引入不涉及px的样式，如reset.css。
+1. 目前有一些ui库还未支持React19，本项目使用的是18.3.1版本，谨慎升级react版本。
+2. postcss-pxtorem插件不支持内联样式，所以 `utils` 里面配备了 `px2rem` 函数解决。示例：`<div style={{ width: px2rem(100) }}>test</div>`
+3. 以下场景pxtorem插件不会转换rem：
+   (1).在main.ts里引入样式，如 `import '@/styles/scss/global.scss';`，建议引入不涉及px的样式，如reset.css。

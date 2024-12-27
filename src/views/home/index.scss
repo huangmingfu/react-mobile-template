@@ -5,6 +5,9 @@
   height: 100vh;
   padding-top: 100px; /* 200px / 2 */
   text-align: center;
+  opacity: 0;
+  width: clamp(320px, 80%, 600px); /* 640px / 2 */
+  user-select: none;
 
   .logo {
     height: 3em; /* 6em / 2 */
