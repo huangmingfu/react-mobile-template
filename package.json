@@ -84,8 +84,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "preserveUnused": ["commit-msg"],
-    "commit-msg": "npx --no -- commitlint --edit"
+    "commit-msg": "npx --no -- commitlint --edit",
+    "preserveUnused": ["commit-msg"]
   },
   "lint-staged": {
     "*": "eslint --fix"
