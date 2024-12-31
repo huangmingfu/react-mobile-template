@@ -112,7 +112,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
               'zustand',
               'ahooks',
               'classnames',
-              'es-toolkit',
+              'lodash-es',
             ],
             'vendor-ui': ['antd-mobile'],
           },

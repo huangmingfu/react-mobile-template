@@ -27,7 +27,7 @@ This is a **mobile project template** based on [React-Ts-Template](https://githu
 - **ahooks**: Provides rich React Hooks similar to VueUse, further simplifying logical code
 - **zustand**: Lightweight state management library
 - **Immer**: Simplifies immutable data structure operations
-- **es-toolkit**: Modern JavaScript utility library
+- **Lodash-es**: Provides common utility functions. If you prefer modern ES implementation, you can also consider `es-toolkit`.
 - **Axios**: HTTP request library
 - **classnames**: Dynamic class name management tool
 - **Dayjs**: Lightweight date processing library
